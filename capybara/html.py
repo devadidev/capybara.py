@@ -21,5 +21,8 @@ class HTML(object):
 
         self.tree = tree
 
+    def css(self, css):
+        return self.tree.cssselect(css)
+
     def xpath(self, xpath):
         return self.tree.xpath(xpath)

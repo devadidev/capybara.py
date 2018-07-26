@@ -1,6 +1,3 @@
-from xpath import dsl as x
-from xpath.renderer import to_xpath
-
 from capybara.driver.base import Base
 from capybara.werkzeug.browser import Browser
 from capybara.werkzeug.node import Node
@@ -48,7 +45,7 @@ class Driver(Base):
         self._browser = None
 
     def _find_css(self, css):
-        elements = self.browser.dom.xpath(to_xpath(x.css(css)))
+        elements = self.browser.dom.css(css)
         return [Node(self, element) for element in elements]
 
     def _find_xpath(self, xpath):
